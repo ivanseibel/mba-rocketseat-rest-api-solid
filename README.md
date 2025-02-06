@@ -19,7 +19,7 @@ GymPass style app.
 
 - [x] The user should not be able to register with a duplicate email;
 - [x] The user cannot check-in twice on the same day;
-- [ ] The user cannot check-in if they are not within 100m of the gym;
+- [x] The user cannot check-in if they are not near (100m) the gym;
 - [ ] The check-in can only be validated up to 20 minutes after it is created;
 - [ ] The check-in can only be validated by administrators;
 - [ ] The gym can only be registered by administrators;
