@@ -30,7 +30,6 @@ GymPass style app.
 - [x] The application data needs to be persisted in a PostgreSQL database;
 - [x] All data lists need to be paginated with 20 items per page;
 - [ ] The user must be identified by a JWT (JSON Web Token);
-- Aqui está um README básico para configurar o ambiente de testes do Vitest com Prisma, incluindo a parte do `pnpm link`:
 
 ---
 
@@ -41,7 +40,7 @@ This guide explains how to set up an isolated test environment for end-to-end (E
 ## Prerequisites
 
 - **Node.js** installed
-- **pnpm** as the package manager
+- **npm** as the package manager
 - **Docker** installed (to run the database)
 
 ## 1. Setting Up a Custom Vitest Environment
@@ -53,7 +52,7 @@ Inside the `prisma/` directory, create a folder named `vitest-environment-prisma
 ```sh
 mkdir -p prisma/vitest-environment-prisma
 cd prisma/vitest-environment-prisma
-pnpm init -y
+npm init -y
 ```
 
 Modify the `package.json` inside `prisma/vitest-environment-prisma/`:
@@ -96,13 +95,13 @@ To make Vitest recognize the custom test environment, you need to link it:
 
 ```sh
 cd prisma/vitest-environment-prisma
-pnpm link --global
+npm link
 ```
 
 Then, inside the main project directory, run:
 
 ```sh
-pnpm link vitest-environment-prisma
+npm link vitest-environment-prisma
 ```
 
 ### 1.4 Configure Vitest to Use the Custom Environment
@@ -127,16 +126,16 @@ export default defineConfig({
 Once the environment is set up, you can run the test suite:
 
 ```sh
-pnpm run test
+npm run test
 ```
 
 ## Troubleshooting
 
 ### Error: `Failed to load url vitest-environment-prisma`
-- Ensure the package is properly linked: `pnpm list -g vitest-environment-prisma`
+- Ensure the package is properly linked: `npm list -g vitest-environment-prisma`
 - If it does not appear, re-run:
   ```sh
-  pnpm link --global
-  pnpm link vitest-environment-prisma
+  npm link --global
+  npm link vitest-environment-prisma
   ```
 - If the error persists, try restarting the terminal.
