@@ -129,13 +129,3 @@ Once the environment is set up, you can run the test suite:
 npm run test
 ```
 
-## Troubleshooting
-
-### Error: `Failed to load url vitest-environment-prisma`
-- Ensure the package is properly linked: `npm list -g vitest-environment-prisma`
-- If it does not appear, re-run:
-  ```sh
-  npm link --global
-  npm link vitest-environment-prisma
-  ```
-- If the error persists, try restarting the terminal.
